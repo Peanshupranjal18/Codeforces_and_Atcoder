@@ -1,69 +1,55 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void run()
+void solve()
 {
     int n, m, k;
     cin >> n >> m >> k;
-    string A;
-    cin >> A;
-
-    vector<int> logs;
-    for (int i = 0; i < n; i++)
+    string s;
+    cin >> s;
+    if (s[0] == 'C')
     {
-        if (A[i] == 'L')
+        cout << "NO"
+             << "\n";
+        return;
+    }
+    bool flag = false;
+    int i = 0, j = 0, cnt = 0;
+    while (j < n and cnt < m)
+    {
+        if (s[j] == 'L')
         {
-            logs.push_back(i);
+            i = j;
+            flag = true;
+            break;
+        }
+        j++;
+        cnt++;
+    }
+    if (!flag)
+    {
+        j = 0;
+        while (j < n and cnt < m)
+        {
+            if (s[j] == 'W')
+            {
+                i = j;
+                flag = true;
+                break;
+            }
+            j++;
+            cnt++;
         }
     }
-    logs.push_back(n + 1);
-
-    int i = -1;
-    int next_log = 0;
-    while (i < n - 1)
-    {
-        if (m >= logs[next_log] - i)
-        {
-            i = logs[next_log];
-        }
-        else
-        {
-            i += m;
-            if (i > n - 1)
-            {
-                cout << "YES\n";
-                return;
-            }
-            while (i < n && i < logs[next_log])
-            {
-                if (A[i] != 'C' && k > 0)
-                {
-                    i++;
-                    k--;
-                }
-                else
-                {
-                    cout << "NO\n";
-                    return;
-                }
-            }
-        }
-        next_log++;
-    }
-    cout << "YES\n";
 }
 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    int t;
-    cin >> t;
-    while (t--)
+    int tc;
+    cin >> tc;
+    while (tc--)
     {
-        run();
+        solve();
     }
-
     return 0;
 }
