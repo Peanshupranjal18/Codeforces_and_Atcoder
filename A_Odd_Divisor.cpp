@@ -41,6 +41,17 @@ typedef tree<pair<ll, ll>, null_type, less<pair<ll, ll>>, rb_tree_tag, tree_orde
 
 void solve()
 {
+    ll n;
+    cin >> n;
+    if (ceil(log2(n)) == floor(log2(n)))
+    {
+        cout << "NO"
+             << "\n";
+        rt;
+    }
+    cout << "YES"
+         << "\n";
+    rt;
 }
 
 signed main()
@@ -58,11 +69,11 @@ signed main()
         solve();
     }
 
-    auto stop = high_resolution_clock::now();
-    auto duration = duration_cast<microseconds>(stop - start);
-    cout << duration.count() * 1e-9 << " "
-         << "s"
-         << "\n";
+    // auto stop = high_resolution_clock::now();
+    // auto duration = duration_cast<microseconds>(stop - start);
+    // cout << duration.count() * 1e-9 << " "
+    //      << "s"
+    //      << "\n";
 
     return 0;
 }
