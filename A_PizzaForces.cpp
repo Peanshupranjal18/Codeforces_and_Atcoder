@@ -43,14 +43,7 @@ void solve()
 {
     ll n;
     cin >> n;
-    vl v(n);
-    f(i, n) cin >> v[i];
-    ll ans = v[0];
-    ff(i, 1, n)
-    {
-        ans &= v[i];
-    }
-    cout << ans << "\n";
+    cout << max(6LL, n + 1) / 2 * 5 << "\n";
     rt;
 }
 
@@ -70,7 +63,7 @@ signed main()
     }
 
     auto stop = high_resolution_clock::now();
-    // auto duration = duration_cast<microseconds>(stop - start);
+    auto duration = duration_cast<microseconds>(stop - start);
     // cout << duration.count() * 1e-9 << " "
     //      << "s"
     //      << "\n";

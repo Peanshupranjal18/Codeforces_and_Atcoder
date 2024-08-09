@@ -41,16 +41,17 @@ typedef tree<pair<ll, ll>, null_type, less<pair<ll, ll>>, rb_tree_tag, tree_orde
 
 void solve()
 {
-    ll n;
-    cin >> n;
-    vl v(n);
-    f(i, n) cin >> v[i];
-    ll ans = v[0];
-    ff(i, 1, n)
+    ll a, b;
+    cin >> a >> b;
+    if (b == 1)
     {
-        ans &= v[i];
+        cout << "NO"
+             << "\n";
+        rt;
     }
-    cout << ans << "\n";
+    cout << "YES"
+         << "\n";
+    cout << a << " " << a * b << " " << a * (b + 1) << "\n";
     rt;
 }
 
@@ -70,7 +71,7 @@ signed main()
     }
 
     auto stop = high_resolution_clock::now();
-    // auto duration = duration_cast<microseconds>(stop - start);
+    auto duration = duration_cast<microseconds>(stop - start);
     // cout << duration.count() * 1e-9 << " "
     //      << "s"
     //      << "\n";
